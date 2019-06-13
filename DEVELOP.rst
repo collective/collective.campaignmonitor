@@ -26,7 +26,6 @@ Running tests
 list all tox environments:
 
     $ tox -l
-    py27-Plone43
     py27-Plone51
     py27-Plone52
     py37-Plone52
@@ -39,4 +38,3 @@ list all tox environments:
 run a specific tox env:
 
     $ tox -e py37-Plone52
-
