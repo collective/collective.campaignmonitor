@@ -2,7 +2,7 @@
 
 # from plone import api
 from collective.campaignmonitor import _
-from collective.campaignmonitor.interfaces import ICampaingMonitorConnection
+from collective.campaignmonitor.interfaces import ICampaignMonitorConnection
 from plone.dexterity.interfaces import IDexterityContent
 from zope.component import getUtility
 from zope.globalrequest import getRequest
@@ -19,7 +19,7 @@ class CampaignMonitorClientsVocabulary(object):
     """
 
     def __call__(self, context):
-        connection = getUtility(ICampaingMonitorConnection)
+        connection = getUtility(ICampaignMonitorConnection)
         items = connection.clients()
 
         terms = []

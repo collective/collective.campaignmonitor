@@ -2,14 +2,14 @@
 
 # from plone import api
 from collective.campaignmonitor import _
+from collective.campaignmonitor.interfaces import ICampaignMonitorConnection
 from plone.dexterity.interfaces import IDexterityContent
-from collective.campaignmonitor.interfaces import ICampaingMonitorConnection
+from zope.component import getUtility
 from zope.globalrequest import getRequest
 from zope.interface import implementer
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
-from zope.component import getUtility
 
 
 @implementer(IVocabularyFactory)

@@ -42,6 +42,10 @@
       name="collective.campaignmonitor-hiddenprofiles"
       />
 
+  <utility
+    provides="collective.campaignmonitor.interfaces.ICampaignMonitorConnection"
+    factory=".connection.CampaignMonitorConnection" />
+
   <!-- -*- extra stuff goes here -*- -->
 
     <include package=".vocabularies" />

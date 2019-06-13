@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<registry>
+  <!-- -*- extra stuff goes here -*- -->
+  <records interface="collective.campaignmonitor.interfaces.ICampaignMonitorSettings" remove="true"/>
+
+  <record name="collective.campaignmonitor.cache.clients" remove="true">
+  </record>
+
+  <record name="collective.campaignmonitor.cache.lists" remove="true">
+  </record>
+
+
+</registry>

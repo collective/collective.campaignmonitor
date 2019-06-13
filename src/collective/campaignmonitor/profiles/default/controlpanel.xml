@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<object
+    name="portal_controlpanel"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="collective.campaignmonitor"
+    purge="False">
+
+    <configlet
+        title="CampaignMonitor Settings"
+        action_id="campaignmonitor"
+        appId="collective.campaignmonitor"
+        category="Products"
+        condition_expr=""
+        icon_expr="string:${portal_url}/++resource++collective.campaignmonitor/campaignmonitor.gif"
+        url_expr="string:${portal_url}/@@campaignmonitor-settings"
+        visible="True"
+        i18n:attributes="title">
+            <permission>Manage portal</permission>
+    </configlet>
+
+</object>

@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 """Module where all interfaces, events and exceptions live."""
 
+from collective.campaignmonitor import _
+from zope import schema
+from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
-from collective.campaingmonitor import _
+
 
 class ICollectiveCampaignmonitorLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
-
 
 
 class ICampaignMonitorSettings(Interface):
@@ -23,20 +25,25 @@ class ICampaignMonitorSettings(Interface):
         required=True,
     )
 
-    client_id = schema.Tuple(
-        title=_(u"Client Id"),
-        description=_(u"Client ids are used in Campaign Monitor to manage accounts, invoices, etc.", default=u""),
-        value_type=schema.Choice(
-            vocabulary="collective.campaignmonitor.CampaignMonitorClientsVocabulary"
+    client_id = schema.Choice(
+        title=_("Client ID"),
+        description=_(
+            u"Campaign Monitor uses clients to group lists, invoices, ... Select the one that you want to use in Plone"
         ),
-        required=True,
+        vocabulary="collective.campaignmonitor.CampaignMonitorClientsVocabulary",
+        required=False,
     )
-
 
 
 class ICampaignMonitorConnection(Interface):
     def initialize():
         """ Load connection data from registy and prepare for serving results """
+
+    def account():
+        """ Return account information from campaign monitor """
+
+    def clients():
+        """ Return available clients at the campaign monitor account """
 
     def lists():
         """ Return available lists at the campaign monitor account """

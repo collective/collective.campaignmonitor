@@ -18,4 +18,13 @@
       directory="static"
       />
 
+  <browser:page
+    name="campaignmonitor-settings"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    class=".controlpanel.CampaignMonitorControlPanel"
+    permission="cmf.ManagePortal"
+    layer="..interfaces.ICollectiveCampaignmonitorLayer"
+    />
+
+
 </configure>

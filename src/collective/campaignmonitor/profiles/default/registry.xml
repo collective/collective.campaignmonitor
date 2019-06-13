@@ -2,11 +2,19 @@
 <registry>
   <!-- -*- extra stuff goes here -*- -->
   <records interface="collective.campaignmonitor.interfaces.ICampaignMonitorSettings" />
-    <record name="collective.campaignmonitor.cache.lists">
-      <field type="plone.registry.field.Tuple">
-          <title>CampaignMonitor Lists</title>
-          <value_type type="plone.registry.field.Dict" />
-      </field>
+
+  <record name="collective.campaignmonitor.cache.clients">
+    <field type="plone.registry.field.Tuple">
+      <title>CampaignMonitor Clients</title>
+      <value_type type="plone.registry.field.Dict" />
+    </field>
+  </record>
+
+  <record name="collective.campaignmonitor.cache.lists">
+    <field type="plone.registry.field.Tuple">
+      <title>CampaignMonitor Lists</title>
+      <value_type type="plone.registry.field.Dict" />
+    </field>
   </record>
 
 
