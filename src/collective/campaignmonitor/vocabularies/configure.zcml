@@ -1,0 +1,19 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="collective.campaignmonitor">
+
+    <!-- -*- extra stuff goes here -*- -->
+
+    <utility
+        component=".campaign_monitor_lists_vocabulary.CampaignMonitorListsVocabularyFactory"
+        name="collective.campaignmonitor.CampaignMonitorListsVocabulary"
+    />
+
+
+    <utility
+        component=".campaign_monitor_clients_vocabulary.CampaignMonitorClientsVocabularyFactory"
+        name="collective.campaignmonitor.CampaignMonitorClientsVocabulary"
+    />
+
+
+</configure>
