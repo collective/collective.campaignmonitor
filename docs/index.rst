@@ -1,0 +1,5 @@
+==========================
+collective.campaignmonitor
+==========================
+
+User documentation
