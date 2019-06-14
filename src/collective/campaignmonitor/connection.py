@@ -113,6 +113,7 @@ class CampaignMonitorConnection(object):
                 name=email,
                 custom_fields=[],
                 resubscribe=False,
+                # XXX add a form option to track this
                 consent_to_track="yes",
             )
             return True
