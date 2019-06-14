@@ -54,9 +54,13 @@ class NewsletterSubscribeForm(extensible.ExtensibleForm, form.Form):
 
         result = self.connection.subscribe(email, list_id)
         if result:
-            message = _(
-                u"Your subscription was processed correctly. Check your e-mail for a confirmation message"
-            )
+            details = self.connection.list_details(list_id)
+            if details.get("ConfirmedOptIn", None):
+                message = _(
+                    u"Your subscription was processed correctly. Check your e-mail for a confirmation message."
+                )
+            else:
+                message = _(u"You have been subscribed to the newsletter")
             api.portal.show_message(message, request=self.request, type="info")
         else:
             message = _(u"Your subscription could not be processed. Please try again.")
