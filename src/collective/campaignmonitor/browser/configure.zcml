@@ -26,5 +26,13 @@
     layer="..interfaces.ICollectiveCampaignmonitorLayer"
     />
 
+  <!-- Newsletter -->
+  <browser:page
+    name="cm-newsletter-subscribe"
+    for="*"
+    class=".subscription.NewsletterSubscribeView"
+    permission="zope2.View"
+    />
+
 
 </configure>
