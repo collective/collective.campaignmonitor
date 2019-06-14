@@ -18,7 +18,7 @@ class CampaignMonitorListsVocabulary(object):
     """
 
     def __call__(self, context):
-        connection = getUtility(ICampaingMonitorConnection)
+        connection = getUtility(ICampaignMonitorConnection)
         items = connection.lists()
 
         terms = []
