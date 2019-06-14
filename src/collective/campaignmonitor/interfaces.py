@@ -51,6 +51,9 @@ class ICampaignMonitorConnection(Interface):
     def subscribe(email, list_id):
         """ Subscribe 'email' to 'list_id' Campaign Monitor list """
 
+    def list_details(list_id):
+        """ get details about a given list """
+
 
 class NotAnEmailAddress(schema.ValidationError):
     __doc__ = _(u"Invalid email address")

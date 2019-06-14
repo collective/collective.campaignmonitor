@@ -5,6 +5,7 @@ from createsend import CreateSend
 from createsend import Subscriber
 from createsend import Unauthorized
 from createsend import BadRequest
+from createsend import List
 from logging import getLogger
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
@@ -118,3 +119,19 @@ class CampaignMonitorConnection(object):
         except BadRequest as e:
             log.info(str(e))
             return False
+
+    def list_details(self, list_id):
+        self.initialize()
+        cm_list = List({"api_key": self.api_key}, list_id=list_id)
+        details = cm_list.details()
+        data = {}
+        data["ConfirmationSuccessPage"] = getattr(
+            details, "ConfirmationSuccessPage", None
+        )
+        data["ConfirmedOptIn"] = getattr(details, "ConfirmedOptIn", None)
+        data["ListID"] = getattr(details, "ListID", None)
+        data["Title"] = getattr(details, "Title", None)
+        data["UnsubscribePage"] = getattr(details, "UnsubscribePage", None)
+        data["UnsubscribeSetting"] = getattr(details, "UnsubscribeSetting", None)
+
+        return data
