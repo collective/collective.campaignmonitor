@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-"""Module where all interfaces, events and exceptions live."""
-
 from collective.campaignmonitor import _
 from zope import schema
 from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
+
+import re
 
 
 class ICollectiveCampaignmonitorLayer(IDefaultBrowserLayer):
@@ -40,10 +40,42 @@ class ICampaignMonitorConnection(Interface):
         """ Load connection data from registy and prepare for serving results """
 
     def account():
-        """ Return account information from campaign monitor """
+        """ Return account information for campaign monitor """
 
     def clients():
         """ Return available clients at the campaign monitor account """
 
     def lists():
         """ Return available lists at the campaign monitor account """
+
+    def subscribe(email, list_id):
+        """ Subscribe 'email' to 'list_id' Campaign Monitor list """
+
+
+class NotAnEmailAddress(schema.ValidationError):
+    __doc__ = _(u"Invalid email address")
+
+
+check_email = re.compile(r"[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+.)*[a-zA-Z]{2,4}").match
+
+
+def validate_email(value):
+    if not check_email(value):
+        raise NotAnEmailAddress(value)
+    return True
+
+
+class INewsletterSubscribe(Interface):
+
+    email = schema.TextLine(
+        title=_(u"Email address"),
+        description=_(u"help_email", default=u"Please enter your email address."),
+        required=True,
+        constraint=validate_email,
+    )
+
+    list_id = schema.Choice(
+        title=_(u"List ID"),
+        vocabulary="collective.campaignmonitor.CampaignMonitorListsVocabulary",
+        required=False,
+    )

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from collective.campaignmonitor import _
 from collective.campaignmonitor.testing import COLLECTIVE_CAMPAIGNMONITOR_INTEGRATION_TESTING  # noqa
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
