@@ -45,10 +45,9 @@ class CampaignMonitorControlPanel(controlpanel.ControlPanelFormWrapper):
         try:
             return connection.account()
         except Exception as e:
-            # XXX
             raise WidgetActionExecutionError(
                 Invalid(
-                    "Could not fetch account details from CampaignMonitor. Please check your CampaignMonitor API key: %s".format(
+                    "Could not fetch account details from CampaignMonitor. Please check your CampaignMonitor API key: {0}".format(
                         e
                     )
                 )

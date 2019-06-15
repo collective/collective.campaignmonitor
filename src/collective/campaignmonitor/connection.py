@@ -1,11 +1,12 @@
+# -*- coding: utf-8 -*-
 from collective.campaignmonitor.interfaces import ICampaignMonitorConnection
 from collective.campaignmonitor.interfaces import ICampaignMonitorSettings
+from createsend import BadRequest
 from createsend import Client
 from createsend import CreateSend
+from createsend import List
 from createsend import Subscriber
 from createsend import Unauthorized
-from createsend import BadRequest
-from createsend import List
 from logging import getLogger
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
@@ -33,7 +34,9 @@ class CampaignMonitorConnection(object):
         if self.registry is None:
             self.registry = getUtility(IRegistry)
         if self.settings is None:
-            self.settings = self.registry.forInterface(ICampaignMonitorSettings)
+            self.settings = self.registry.forInterface(
+                ICampaignMonitorSettings
+            )
 
         self.api_key = self.settings.api_key
 
@@ -107,13 +110,12 @@ class CampaignMonitorConnection(object):
         self.initialize()
         subscriber = Subscriber({"api_key": self.api_key})
         try:
-            subs = subscriber.add(
+            subscriber.add(
                 list_id=list_id,
                 email_address=email,
                 name=email,
                 custom_fields=[],
                 resubscribe=False,
-                # XXX add a form option to track this
                 consent_to_track="yes",
             )
             return True
@@ -133,6 +135,8 @@ class CampaignMonitorConnection(object):
         data["ListID"] = getattr(details, "ListID", None)
         data["Title"] = getattr(details, "Title", None)
         data["UnsubscribePage"] = getattr(details, "UnsubscribePage", None)
-        data["UnsubscribeSetting"] = getattr(details, "UnsubscribeSetting", None)
+        data["UnsubscribeSetting"] = getattr(
+            details, "UnsubscribeSetting", None
+        )
 
         return data
