@@ -6,6 +6,13 @@
 collective.campaignmonitor
 ==========================
 
+.. image:: https://travis-ci.com/collective/collective.campaignmonitor.svg?branch=master
+    :target: https://travis-ci.com/collective/collective.campaignmonitor
+
+.. image:: https://coveralls.io/repos/github/collective/collective.campaignmonitor/badge.svg?branch=master
+    :target: https://coveralls.io/github/collective/collective.campaignmonitor?branch=master
+
+
 Campaign Monitor integration in Plone.
 
 Heavily based on collective.mailchimp by `Timo Stollenwerk`_
