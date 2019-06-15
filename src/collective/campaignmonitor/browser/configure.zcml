@@ -1,39 +1,25 @@
-<configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:browser="http://namespaces.zope.org/browser"
-    xmlns:plone="http://namespaces.plone.org/plone"
-    i18n_domain="collective.campaignmonitor">
-
-  <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
-  <include package="z3c.jbot" file="meta.zcml" />
-  <browser:jbot
-      directory="overrides"
-      layer="collective.campaignmonitor.interfaces.ICollectiveCampaignmonitorLayer"
-      />
+<configure xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:plone="http://namespaces.plone.org/plone"
+  i18n_domain="collective.campaignmonitor">
 
   <!-- Publish static files -->
-  <plone:static
-      name="collective.campaignmonitor"
-      type="plone"
-      directory="static"
-      />
+  <plone:static name="collective.campaignmonitor"
+    type="plone"
+    directory="static" />
 
-  <browser:page
-    name="campaignmonitor-settings"
+  <browser:page name="campaignmonitor-settings"
     for="Products.CMFPlone.interfaces.IPloneSiteRoot"
     class=".controlpanel.CampaignMonitorControlPanel"
     permission="cmf.ManagePortal"
-    layer="..interfaces.ICollectiveCampaignmonitorLayer"
-    />
+    layer="..interfaces.ICollectiveCampaignmonitorLayer" />
 
   <!-- Newsletter -->
-  <browser:page
-    name="cm-newsletter-subscribe"
+  <browser:page name="cm-newsletter-subscribe"
     for="*"
     class=".subscription.NewsletterSubscribeView"
     permission="zope2.View"
-    layer="..interfaces.ICollectiveCampaignmonitorLayer"
-    />
+    layer="..interfaces.ICollectiveCampaignmonitorLayer" />
 
 
 </configure>
