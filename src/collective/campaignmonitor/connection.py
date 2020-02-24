@@ -106,14 +106,14 @@ class CampaignMonitorConnection(object):
             return cache
         return self._lists()
 
-    def subscribe(self, email, list_id):
+    def subscribe(self, email, list_id, name=None):
         self.initialize()
         subscriber = Subscriber({"api_key": self.api_key})
         try:
             subscriber.add(
                 list_id=list_id,
                 email_address=email,
-                name=email,
+                name=name or email,
                 custom_fields=[],
                 resubscribe=False,
                 consent_to_track="yes",
