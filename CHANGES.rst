@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-1.0b2 (unreleased)
-------------------
+1.0 (2020-02-24)
+----------------
 
 - Send name when subscribing user to a list if name is given.
   [erral]
