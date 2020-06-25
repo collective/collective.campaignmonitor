@@ -5,7 +5,8 @@ Changelog
 1.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Update classifiers: Plone 5.2 and python3.
+  [erral]
 
 
 1.0.1 (2020-06-25)
