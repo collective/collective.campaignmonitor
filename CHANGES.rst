@@ -5,7 +5,8 @@ Changelog
 1.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Add eu and es translations.
+  [erral]
 
 
 1.0 (2020-02-24)
