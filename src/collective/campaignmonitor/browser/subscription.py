@@ -34,16 +34,13 @@ class NewsletterSubscribeForm(extensible.ExtensibleForm, form.Form):
         # Retrieve the list id either from the request/form or fall back to
         # the default_list setting.
         list_id = self.context.REQUEST.get("list_id", None)
-        list_id = list_id or self.request.form.get(
-            "form.widgets.list_id", None
-        )
+        list_id = list_id or self.request.form.get("form.widgets.list_id", None)
         if list_id is not None:
             self.widgets["list_id"].mode = HIDDEN_MODE
             self.widgets["list_id"].value = list_id
 
     @button.buttonAndHandler(
-        _(u"subscribe_to_newsletter_button", default=u"Subscribe"),
-        name="subscribe",
+        _(u"subscribe_to_newsletter_button", default=u"Subscribe"), name="subscribe",
     )
     def handleApply(self, action):
         data, errors = self.extractData()
@@ -65,12 +62,8 @@ class NewsletterSubscribeForm(extensible.ExtensibleForm, form.Form):
                 message = _(u"You have been subscribed to the newsletter")
             api.portal.show_message(message, request=self.request, type="info")
         else:
-            message = _(
-                u"Your subscription could not be processed. Please try again."
-            )
-            api.portal.show_message(
-                message, request=self.request, type="error"
-            )
+            message = _(u"Your subscription could not be processed. Please try again.")
+            api.portal.show_message(message, request=self.request, type="error")
 
         self.request.response.redirect(self.context.absolute_url())
 
