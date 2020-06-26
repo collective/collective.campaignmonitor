@@ -5,7 +5,8 @@ Changelog
 1.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Allow passing the 'resubscribe' parameter when subscribing a user
+  [erral]
 
 
 1.0.2 (2020-06-25)
