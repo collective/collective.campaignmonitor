@@ -1,0 +1,25 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+  xmlns:gs="http://namespaces.zope.org/genericsetup">
+
+  <gs:registerProfile name="1001"
+    title="Add new field to settings"
+    directory="1001"
+    description='Configuration for version 1001'
+    for="Products.CMFPlone.interfaces.IMigratingPloneSiteRoot"
+    provides="Products.GenericSetup.interfaces.EXTENSION" />
+
+  <gs:upgradeSteps source="1000"
+    destination="1001"
+    profile="collective.campaignmonitor:default">
+
+    <gs:upgradeStep title="Add new field to settings"
+      description=""
+      handler=".v1001.upgrade" />
+
+    <gs:upgradeDepends title="Add new field to settings (GS profile)"
+      description=""
+      import_profile="collective.campaignmonitor.upgrades:1001" />
+
+  </gs:upgradeSteps>
+
+</configure>
