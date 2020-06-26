@@ -34,9 +34,7 @@ class CampaignMonitorConnection(object):
         if self.registry is None:
             self.registry = getUtility(IRegistry)
         if self.settings is None:
-            self.settings = self.registry.forInterface(
-                ICampaignMonitorSettings
-            )
+            self.settings = self.registry.forInterface(ICampaignMonitorSettings)
 
         self.api_key = self.settings.api_key
 
@@ -135,8 +133,6 @@ class CampaignMonitorConnection(object):
         data["ListID"] = getattr(details, "ListID", None)
         data["Title"] = getattr(details, "Title", None)
         data["UnsubscribePage"] = getattr(details, "UnsubscribePage", None)
-        data["UnsubscribeSetting"] = getattr(
-            details, "UnsubscribeSetting", None
-        )
+        data["UnsubscribeSetting"] = getattr(details, "UnsubscribeSetting", None)
 
         return data
