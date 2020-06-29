@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<registry>
+  <!-- -*- extra stuff goes here -*- -->
+  <record name="collective.campaignmonitor.interfaces.ICampaignMonitorSettings.force_resubscribe">
+    <field type="plone.registry.field.Bool">
+      <title>CForce resubscription in default form?</title>
+      <description>When adding a new subscriber from the API, Campaign Monitor checks if the user was previously unsubscribed from the list and if so it prevents from adding it. If this option is enabled, this check is bypassed. Be careful when using this option.</description>
+      <default>False</default>
+    </field>
+  </record>
+
+
+</registry>
