@@ -51,7 +51,9 @@ class NewsletterSubscribeForm(extensible.ExtensibleForm, form.Form):
         list_id = data.get("list_id")
         email = data.get("email")
 
-        result = self.connection.subscribe(email, list_id)
+        resubscribe = getattr(self.settings, "force_resubscribe", False) or False
+
+        result = self.connection.subscribe(email, list_id, resubscribe=resubscribe)
         if result:
             details = self.connection.list_details(list_id)
             if details.get("ConfirmedOptIn", None):
