@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-06-25 07:15+0000\n"
+"POT-Creation-Date: 2020-06-29 05:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,19 +34,23 @@ msgstr ""
 msgid "Client ID"
 msgstr ""
 
-#: ../interfaces.py:74
+#: ../interfaces.py:82
 msgid "Email address"
+msgstr ""
+
+#: ../interfaces.py:38
+msgid "Force resubscription in default form?"
 msgstr ""
 
 #: ../configure.zcml:29
 msgid "Installs the collective.campaignmonitor add-on."
 msgstr ""
 
-#: ../interfaces.py:59
+#: ../interfaces.py:67
 msgid "Invalid email address"
 msgstr ""
 
-#: ../interfaces.py:81
+#: ../interfaces.py:89
 msgid "List ID"
 msgstr ""
 
@@ -66,15 +70,19 @@ msgstr ""
 msgid "Uninstalls the collective.campaignmonitor add-on."
 msgstr ""
 
-#: ../browser/subscription.py:65
+#: ../interfaces.py:39
+msgid "When adding a new subscriber from the API, Campaign Monitor checks if the user was previously unsubscribed from the list and if so it prevents from adding it. If this option is enabled, this check is bypassed. Be careful when using this option."
+msgstr ""
+
+#: ../browser/subscription.py:64
 msgid "You have been subscribed to the newsletter"
 msgstr ""
 
-#: ../browser/subscription.py:68
+#: ../browser/subscription.py:67
 msgid "Your subscription could not be processed. Please try again."
 msgstr ""
 
-#: ../browser/subscription.py:61
+#: ../browser/subscription.py:60
 msgid "Your subscription was processed correctly. Check your e-mail for a confirmation message."
 msgstr ""
 
@@ -92,7 +100,7 @@ msgid "help_api_key"
 msgstr ""
 
 #. Default: "Please enter your email address."
-#: ../interfaces.py:75
+#: ../interfaces.py:83
 msgid "help_email"
 msgstr ""
 
@@ -102,6 +110,6 @@ msgid "msg_campaignmonitor_no_account"
 msgstr ""
 
 #. Default: "Subscribe"
-#: ../browser/subscription.py:45
+#: ../browser/subscription.py:43
 msgid "subscribe_to_newsletter_button"
 msgstr ""

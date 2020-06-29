@@ -1,8 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-06-25 07:15+0000\n"
-"PO-Revision-Date: 2020-06-25 09:19+0200\n"
+"POT-Creation-Date: 2020-06-29 05:52+0000\n"
+"PO-Revision-Date: 2020-06-29 07:54+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,8 +13,6 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "Language: es\n"
 "X-Generator: Poedit 2.3\n"
 
@@ -36,19 +36,23 @@ msgstr "Configuracion de Campaign Monitor"
 msgid "Client ID"
 msgstr "ID de cliente"
 
-#: ../interfaces.py:74
+#: ../interfaces.py:82
 msgid "Email address"
 msgstr "Correo electrónico"
+
+#: ../interfaces.py:38
+msgid "Force resubscription in default form?"
+msgstr "¿Forzar la suscripción de usuarios?"
 
 #: ../configure.zcml:29
 msgid "Installs the collective.campaignmonitor add-on."
 msgstr "Instalar collective.campaignmonitor."
 
-#: ../interfaces.py:59
+#: ../interfaces.py:67
 msgid "Invalid email address"
 msgstr "Correo electrónico no válido"
 
-#: ../interfaces.py:81
+#: ../interfaces.py:89
 msgid "List ID"
 msgstr "ID de lista"
 
@@ -68,15 +72,19 @@ msgstr "Formulario de suscripción"
 msgid "Uninstalls the collective.campaignmonitor add-on."
 msgstr "Desinstalar collective.campaignmonitor."
 
-#: ../browser/subscription.py:65
+#: ../interfaces.py:39
+msgid "When adding a new subscriber from the API, Campaign Monitor checks if the user was previously unsubscribed from the list and if so it prevents from adding it. If this option is enabled, this check is bypassed. Be careful when using this option."
+msgstr "Cuando se añade un nuevo suscriptor utilizando el API, Campaign Monitor verifica si este usuario se ha borrado de la listas de suscriptores y si es así no lo vuelve a suscribir. Si esta opción está activa la verificación no se realiza y se indica a Campaign Monitor que suscriba al usuario en todo caso. Utilice esta opción con cuidado."
+
+#: ../browser/subscription.py:64
 msgid "You have been subscribed to the newsletter"
 msgstr "Se ha suscrito al boletín correctamente"
 
-#: ../browser/subscription.py:68
+#: ../browser/subscription.py:67
 msgid "Your subscription could not be processed. Please try again."
 msgstr "La suscripción no se ha podido realizar. Inténtelo de nuevo más tarde por favor."
 
-#: ../browser/subscription.py:61
+#: ../browser/subscription.py:60
 msgid "Your subscription was processed correctly. Check your e-mail for a confirmation message."
 msgstr "La suscripción se ha procesado correctamente. Recibirá un correo electrónico de confirmación."
 
@@ -94,7 +102,7 @@ msgid "help_api_key"
 msgstr "Introduzca aquí su clave de API de Campaign Monitor (por ejemplo. '8b785dcabe4b5aa24ef84201eas3344d-us4'). Entre a xxx.createsend.com, vaya a 'account settings' -> 'API Keys' haga click en 'Show API key' y copie la clave aquí."
 
 #. Default: "Please enter your email address."
-#: ../interfaces.py:75
+#: ../interfaces.py:83
 msgid "help_email"
 msgstr "Introduzca su correo electrónico"
 
@@ -104,6 +112,6 @@ msgid "msg_campaignmonitor_no_account"
 msgstr "Su cuenta no se ha guardado o no es válida"
 
 #. Default: "Subscribe"
-#: ../browser/subscription.py:45
+#: ../browser/subscription.py:43
 msgid "subscribe_to_newsletter_button"
 msgstr "Suscribirse"
