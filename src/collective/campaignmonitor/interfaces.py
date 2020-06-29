@@ -34,6 +34,14 @@ class ICampaignMonitorSettings(Interface):
         required=False,
     )
 
+    force_resubscribe = schema.Bool(
+        title=_("Force resubscription in default form?"),
+        description=_(
+            u"When adding a new subscriber from the API, Campaign Monitor checks if the user was previously unsubscribed from the list and if so it prevents from adding it. If this option is enabled, this check is bypassed. Be careful when using this option."
+        ),
+        default=False,
+    )
+
 
 class ICampaignMonitorConnection(Interface):
     def initialize():
