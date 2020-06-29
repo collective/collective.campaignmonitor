@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.2 (unreleased)
+1.2 (2020-06-29)
 ----------------
 
 - Add an option to let the administrator configure how should Campaign Monitor behave when unsubscribed users are subscribed again using the default form.
