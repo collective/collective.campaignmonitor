@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-1.3 (unreleased)
-----------------
+1.2.1 (2020-07-14)
+------------------
 
 - Hide upgrade profile from install screen.
   [erral]
