@@ -26,17 +26,14 @@ _marker = None
 @implementer(ICampaignMonitorConnection)
 class CampaignMonitorConnection(object):
     def __init__(self):
-        self.registry = None
-        self.settings = None
         self.api_key = None
 
     def initialize(self):
-        if self.registry is None:
-            self.registry = getUtility(IRegistry)
-        if self.settings is None:
-            self.settings = self.registry.forInterface(ICampaignMonitorSettings)
+        registry = getUtility(IRegistry)
+        settings = registry.forInterface(ICampaignMonitorSettings)
+        self.api_key = settings.api_key
 
-        self.api_key = self.settings.api_key
+        return registry, settings
 
     def account(self):
         self.initialize()
@@ -44,22 +41,22 @@ class CampaignMonitorConnection(object):
 
     def update_cache(self):
         log.info("Updating cache...")
-        self.initialize()
-        if not self.settings.api_key:
+        registry, settings = self.initialize()
+        if not settings.api_key:
             return
 
         clients = self._clients()
         if type(clients) is list:
             clients = tuple(clients)
-            if self.registry[CLIENTS_CACHE_KEY] != clients:
-                self.registry[CLIENTS_CACHE_KEY] = clients
+            if registry[CLIENTS_CACHE_KEY] != clients:
+                registry[CLIENTS_CACHE_KEY] = clients
                 log.info("Updated client list.")
 
         lists = self._lists()
         if type(lists) is list:
             lists = tuple(lists)
-            if self.registry[LISTS_CACHE_KEY] != lists:
-                self.registry[LISTS_CACHE_KEY] = lists
+            if registry[LISTS_CACHE_KEY] != lists:
+                registry[LISTS_CACHE_KEY] = lists
                 log.info("Update lists list")
 
         log.info("Updating cache finished.")
@@ -78,14 +75,15 @@ class CampaignMonitorConnection(object):
         return results
 
     def clients(self):
-        self.initialize()
-        cache = self.registry.get(CLIENTS_CACHE_KEY, _marker)
+        registry, settings = self.initialize()
+        cache = registry.get(CLIENTS_CACHE_KEY, _marker)
         if cache and cache is not _marker:
             return cache
         return self._clients()
 
     def _lists(self):
-        cs = Client({"api_key": self.api_key}, self.settings.client_id)
+        registry, settings = self.initialize()
+        cs = Client({"api_key": self.api_key}, settings.client_id)
         results = []
         try:
             lists = cs.lists()
@@ -98,8 +96,8 @@ class CampaignMonitorConnection(object):
         return results
 
     def lists(self):
-        self.initialize()
-        cache = self.registry.get(LISTS_CACHE_KEY, _marker)
+        registry, settings = self.initialize()
+        cache = registry.get(LISTS_CACHE_KEY, _marker)
         if cache and cache is not _marker:
             return cache
         return self._lists()
