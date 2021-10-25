@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.3 (unreleased)
+1.3 (2021-10-25)
 ----------------
 
 - Fix 'Connection Should not load state' errors, with a new strategy to obtain the settings in the utility.
