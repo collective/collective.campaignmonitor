@@ -5,8 +5,8 @@ Changelog
 1.3 (unreleased)
 ----------------
 
-- Nothing changed yet.
-
+- Fix 'Connection Should not load state' errors, with a new strategy to obtain the settings in the utility.
+  [erral]
 
 1.2.1 (2020-07-14)
 ------------------
