@@ -102,7 +102,7 @@ class CampaignMonitorConnection(object):
             return cache
         return self._lists()
 
-    def subscribe(self, email, list_id, name=None, resubscribe=False):
+    def subscribe(self, email, list_id, name=None, custom_fields=[], resubscribe=False):
         self.initialize()
         subscriber = Subscriber({"api_key": self.api_key})
         try:
@@ -110,7 +110,7 @@ class CampaignMonitorConnection(object):
                 list_id=list_id,
                 email_address=email,
                 name=name or email,
-                custom_fields=[],
+                custom_fields=custom_fields,
                 resubscribe=resubscribe,
                 consent_to_track="yes",
             )
