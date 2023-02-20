@@ -134,3 +134,29 @@ class CampaignMonitorConnection(object):
         data["UnsubscribeSetting"] = getattr(details, "UnsubscribeSetting", None)
 
         return data
+
+    def list_webhooks(self, list_id):
+        self.initialize()
+        cm_list = List({"api_key": self.api_key}, list_id=list_id)
+        return cm_list.webhooks()
+
+
+    def create_list_webhook(self, list_id, events, url, payload_format="json"):
+        self.initialize()
+        cm_list = List({"api_key": self.api_key}, list_id=list_id)
+        try:
+            webhook = cm_list.create_webhook(events, url, payload_format)
+            return True
+        except BadRequest as e:
+            log.info(str(e))
+            return False
+
+    def delete_list_webhook(self, list_id, webhook_id):
+        self.initialize()
+        cm_list = List({"api_key": self.api_key}, list_id=list_id)
+        try:
+            webhook = cm_list.delete_webhook(webhook_id)
+            return True
+        except BadRequest as e:
+            log.info(str(e))
+            return False
