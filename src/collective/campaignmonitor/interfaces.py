@@ -68,7 +68,7 @@ class ICampaignMonitorConnection(Interface):
     def create_list_webhook(list_id, events, url, payload_format):
         """ create a webhook in a given list """
 
-    def create_list_webhook(list_id, webhook_id):
+    def delete_list_webhook(list_id, webhook_id):
         """ delete a webhook in a given list """
 
 class NotAnEmailAddress(schema.ValidationError):
