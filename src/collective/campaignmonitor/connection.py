@@ -135,6 +135,16 @@ class CampaignMonitorConnection(object):
 
         return data
 
+    def get_subscriber(self, list_id, email_address):
+        self.initialize()
+        subscriber = Subscriber({"api_key": self.api_key})
+        try:
+            return subscriber.get(list_id=list_id, email_address=email_address)
+        except BadRequest as e:
+            log.info(str(e))
+            return False
+
+
     def list_webhooks(self, list_id):
         self.initialize()
         cm_list = List({"api_key": self.api_key}, list_id=list_id)

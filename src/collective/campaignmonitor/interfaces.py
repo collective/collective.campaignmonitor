@@ -59,6 +59,9 @@ class ICampaignMonitorConnection(Interface):
     def subscribe(email, list_id):
         """ Subscribe 'email' to 'list_id' Campaign Monitor list """
 
+    def get_subscriber(list_id, email):
+        """ Subscribe 'email' to 'list_id' Campaign Monitor list """
+
     def list_details(list_id):
         """ get details about a given list """
 
