@@ -5,7 +5,8 @@ Changelog
 1.4 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Add additional methods to the utility
+  [libargutxi]
 
 
 1.3 (2021-10-25)
