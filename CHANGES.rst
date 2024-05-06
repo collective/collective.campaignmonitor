@@ -5,8 +5,8 @@ Changelog
 1.5 (unreleased)
 ----------------
 
-- Nothing changed yet.
-
+- Add new supported python versions to setup.py metadata
+  [erral]
 
 1.4 (2024-05-06)
 ----------------
