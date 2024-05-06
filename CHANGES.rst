@@ -5,8 +5,8 @@ Changelog
 1.4.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Create wheels
+  [erral]
 
 1.4.1 (2024-05-06)
 ------------------
