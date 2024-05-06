@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.4 (unreleased)
+1.4 (2024-05-06)
 ----------------
 
 - Add additional methods to the utility
