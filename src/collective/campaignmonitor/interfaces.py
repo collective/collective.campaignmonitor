@@ -60,9 +60,20 @@ class ICampaignMonitorConnection(Interface):
     def subscribe(email, list_id):
         """ Subscribe 'email' to 'list_id' Campaign Monitor list """
 
+    def get_subscriber(list_id, email):
+        """ Subscribe 'email' to 'list_id' Campaign Monitor list """
+
     def list_details(list_id):
         """ get details about a given list """
 
+    def list_webhooks(list_id):
+        """ get webhooks of a given list """
+
+    def create_list_webhook(list_id, events, url, payload_format):
+        """ create a webhook in a given list """
+
+    def delete_list_webhook(list_id, webhook_id):
+        """ delete a webhook in a given list """
 
 class NotAnEmailAddress(schema.ValidationError):
     __doc__ = _(u"Invalid email address")
