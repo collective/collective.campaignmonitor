@@ -5,7 +5,12 @@ Changelog
 1.5 (unreleased)
 ----------------
 
-- Add new supported python versions to setup.py metadata
+- add new supported python versions [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+-  [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+- [ci skip] [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
   [erral]
 
 1.4 (2024-05-06)
