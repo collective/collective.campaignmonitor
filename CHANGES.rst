@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-1.5 (unreleased)
-----------------
+1.4.1 (2024-05-06)
+------------------
 
 - add new supported python versions [Mikel Larreategi <mlarreategi@codesyntax.com>]
 
