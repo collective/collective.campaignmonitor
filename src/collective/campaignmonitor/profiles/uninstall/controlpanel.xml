@@ -1,13 +1,15 @@
-<?xml version="1.0"?>
-<object name="portal_controlpanel"
-  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-  i18n:domain="collective.campaignmonitor"
-  purge="False">
+<?xml version="1.0" encoding="utf-8"?>
+<object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+        name="portal_controlpanel"
+        purge="False"
+        i18n:domain="collective.campaignmonitor"
+>
 
-  <configlet remove="True"
-    action_id="campaignmonitor"
-    appId="collective.campaignmonitor"
-    category="Products">
-  </configlet>
+  <configlet action_id="campaignmonitor"
+             appId="collective.campaignmonitor"
+             category="Products"
+             remove="True"
+  >
+</configlet>
 
 </object>

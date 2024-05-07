@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from collective.campaignmonitor import _
 from zope import schema
 from zope.interface import Interface
@@ -13,22 +12,22 @@ class ICollectiveCampaignmonitorLayer(IDefaultBrowserLayer):
 
 class ICampaignMonitorSettings(Interface):
     api_key = schema.TextLine(
-        title=_(u"CampaignMonitor API Key"),
+        title=_("CampaignMonitor API Key"),
         description=_(
-            u"help_api_key",
-            default=u"Enter in your CampaignMonitor key here (.e.g. "
-            + u"'8b785dcabe4b5aa24ef84201ea7dcded-us4'). Log into "
-            + u"xxxx.createsend.com, go to account settings -> API Keys "
-            + u"click on Show API key and copy the API Key to this field.",
+            "help_api_key",
+            default="Enter in your CampaignMonitor key here (.e.g. "
+            + "'8b785dcabe4b5aa24ef84201ea7dcded-us4'). Log into "
+            + "xxxx.createsend.com, go to account settings -> API Keys "
+            + "click on Show API key and copy the API Key to this field.",
         ),
-        default=u"",
+        default="",
         required=True,
     )
 
     client_id = schema.Choice(
         title=_("Client ID"),
         description=_(
-            u"Campaign Monitor uses clients to group lists, invoices, ... Select the one that you want to use in Plone"
+            "Campaign Monitor uses clients to group lists, invoices, ... Select the one that you want to use in Plone"
         ),
         vocabulary="collective.campaignmonitor.CampaignMonitorClientsVocabulary",
         required=False,
@@ -37,7 +36,7 @@ class ICampaignMonitorSettings(Interface):
     force_resubscribe = schema.Bool(
         title=_("Force resubscription in default form?"),
         description=_(
-            u"When adding a new subscriber from the API, Campaign Monitor checks if the user was previously unsubscribed from the list and if so it prevents from adding it. If this option is enabled, this check is bypassed. Be careful when using this option."
+            "When adding a new subscriber from the API, Campaign Monitor checks if the user was previously unsubscribed from the list and if so it prevents from adding it. If this option is enabled, this check is bypassed. Be careful when using this option."
         ),
         default=False,
         required=False,
@@ -46,37 +45,38 @@ class ICampaignMonitorSettings(Interface):
 
 class ICampaignMonitorConnection(Interface):
     def initialize():
-        """ Load connection data from registy and prepare for serving results """
+        """Load connection data from registy and prepare for serving results"""
 
     def account():
-        """ Return account information for campaign monitor """
+        """Return account information for campaign monitor"""
 
     def clients():
-        """ Return available clients at the campaign monitor account """
+        """Return available clients at the campaign monitor account"""
 
     def lists():
-        """ Return available lists at the campaign monitor account """
+        """Return available lists at the campaign monitor account"""
 
     def subscribe(email, list_id):
-        """ Subscribe 'email' to 'list_id' Campaign Monitor list """
+        """Subscribe 'email' to 'list_id' Campaign Monitor list"""
 
     def get_subscriber(list_id, email):
-        """ Subscribe 'email' to 'list_id' Campaign Monitor list """
+        """Subscribe 'email' to 'list_id' Campaign Monitor list"""
 
     def list_details(list_id):
-        """ get details about a given list """
+        """get details about a given list"""
 
     def list_webhooks(list_id):
-        """ get webhooks of a given list """
+        """get webhooks of a given list"""
 
     def create_list_webhook(list_id, events, url, payload_format):
-        """ create a webhook in a given list """
+        """create a webhook in a given list"""
 
     def delete_list_webhook(list_id, webhook_id):
-        """ delete a webhook in a given list """
+        """delete a webhook in a given list"""
+
 
 class NotAnEmailAddress(schema.ValidationError):
-    __doc__ = _(u"Invalid email address")
+    __doc__ = _("Invalid email address")
 
 
 check_email = re.compile(r"[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+.)*[a-zA-Z]{2,4}").match
@@ -91,14 +91,14 @@ def validate_email(value):
 class INewsletterSubscribe(Interface):
 
     email = schema.TextLine(
-        title=_(u"Email address"),
-        description=_(u"help_email", default=u"Please enter your email address."),
+        title=_("Email address"),
+        description=_("help_email", default="Please enter your email address."),
         required=True,
         constraint=validate_email,
     )
 
     list_id = schema.Choice(
-        title=_(u"List ID"),
+        title=_("List ID"),
         vocabulary="collective.campaignmonitor.CampaignMonitorListsVocabulary",
         required=False,
     )

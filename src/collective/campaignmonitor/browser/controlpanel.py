@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from collective.campaignmonitor import _
 from collective.campaignmonitor.interfaces import ICampaignMonitorConnection
 from collective.campaignmonitor.interfaces import ICampaignMonitorSettings
@@ -20,14 +19,14 @@ except ImportError:
 class CampaignMonitorControlPanelForm(controlpanel.RegistryEditForm):
     schema = ICampaignMonitorSettings
     label = _("CampaingMonitor Settings")
-    description = u""
+    description = ""
 
     def update(self):
         if IDisableCSRFProtection is not None:
             alsoProvides(self.request, IDisableCSRFProtection)
 
         self.update_cache()
-        super(CampaignMonitorControlPanelForm, self).update()
+        super().update()
 
     def update_cache(self):
         connection = getUtility(ICampaignMonitorConnection)
@@ -47,7 +46,7 @@ class CampaignMonitorControlPanel(controlpanel.ControlPanelFormWrapper):
         except Exception as e:
             raise WidgetActionExecutionError(
                 Invalid(
-                    "Could not fetch account details from CampaignMonitor. Please check your CampaignMonitor API key: {0}".format(
+                    "Could not fetch account details from CampaignMonitor. Please check your CampaignMonitor API key: {}".format(
                         e
                     )
                 )

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from collective.campaignmonitor.interfaces import ICampaignMonitorConnection
 from collective.campaignmonitor.interfaces import ICampaignMonitorSettings
 from createsend import BadRequest
@@ -24,7 +23,7 @@ _marker = None
 
 
 @implementer(ICampaignMonitorConnection)
-class CampaignMonitorConnection(object):
+class CampaignMonitorConnection:
     def __init__(self):
         self.api_key = None
 
@@ -144,12 +143,10 @@ class CampaignMonitorConnection(object):
             log.info(str(e))
             return False
 
-
     def list_webhooks(self, list_id):
         self.initialize()
         cm_list = List({"api_key": self.api_key}, list_id=list_id)
         return cm_list.webhooks()
-
 
     def create_list_webhook(self, list_id, events, url, payload_format="json"):
         self.initialize()

@@ -1,5 +1,6 @@
-# -*- coding: utf-8 -*-
-from collective.campaignmonitor.testing import COLLECTIVE_CAMPAIGNMONITOR_INTEGRATION_TESTING  # noqa
+from collective.campaignmonitor.testing import (  # noqa
+    COLLECTIVE_CAMPAIGNMONITOR_INTEGRATION_TESTING,
+)
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from zope.component import getUtility
@@ -15,11 +16,11 @@ class CampaignMonitorListsVocabularyIntegrationTest(unittest.TestCase):
 
     def setUp(self):
         """Custom shared utility setup for tests."""
-        self.portal = self.layer['portal']
-        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+        self.portal = self.layer["portal"]
+        setRoles(self.portal, TEST_USER_ID, ["Manager"])
 
     def test_vocab_campaign_monitor_lists_vocabulary(self):
-        vocab_name = 'collective.campaignmonitor.CampaignMonitorListsVocabulary'
+        vocab_name = "collective.campaignmonitor.CampaignMonitorListsVocabulary"
         factory = getUtility(IVocabularyFactory, vocab_name)
         self.assertTrue(IVocabularyFactory.providedBy(factory))
 
