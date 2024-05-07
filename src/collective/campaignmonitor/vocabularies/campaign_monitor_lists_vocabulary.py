@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # from plone import api
 from collective.campaignmonitor.interfaces import ICampaignMonitorConnection
 from zope.component import getUtility
@@ -10,9 +8,8 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 
 @implementer(IVocabularyFactory)
-class CampaignMonitorListsVocabulary(object):
-    """
-    """
+class CampaignMonitorListsVocabulary:
+    """ """
 
     def __call__(self, context):
         connection = getUtility(ICampaignMonitorConnection)

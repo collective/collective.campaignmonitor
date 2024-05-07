@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # from plone import api
 from collective.campaignmonitor.interfaces import ICampaignMonitorConnection
 from zope.component import getUtility
@@ -10,9 +8,9 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 
 @implementer(IVocabularyFactory)
-class CampaignMonitorClientsVocabulary(object):
-    """ A vocabulary that returns available clients on the registerd
-        Campaign Monitor account
+class CampaignMonitorClientsVocabulary:
+    """A vocabulary that returns available clients on the registerd
+    Campaign Monitor account
     """
 
     def __call__(self, context):

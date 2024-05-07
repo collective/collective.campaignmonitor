@@ -1,25 +1,33 @@
-<configure xmlns="http://namespaces.zope.org/zope"
-  xmlns:browser="http://namespaces.zope.org/browser"
-  xmlns:plone="http://namespaces.plone.org/plone"
-  i18n_domain="collective.campaignmonitor">
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="collective.campaignmonitor"
+    >
 
   <!-- Publish static files -->
-  <plone:static name="collective.campaignmonitor"
-    type="plone"
-    directory="static" />
+  <plone:static
+      directory="static"
+      name="collective.campaignmonitor"
+      type="plone"
+      />
 
-  <browser:page name="campaignmonitor-settings"
-    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-    class=".controlpanel.CampaignMonitorControlPanel"
-    permission="cmf.ManagePortal"
-    layer="..interfaces.ICollectiveCampaignmonitorLayer" />
+  <browser:page
+      name="campaignmonitor-settings"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".controlpanel.CampaignMonitorControlPanel"
+      permission="cmf.ManagePortal"
+      layer="..interfaces.ICollectiveCampaignmonitorLayer"
+      />
 
   <!-- Newsletter -->
-  <browser:page name="cm-newsletter-subscribe"
-    for="*"
-    class=".subscription.NewsletterSubscribeView"
-    permission="zope2.View"
-    layer="..interfaces.ICollectiveCampaignmonitorLayer" />
+  <browser:page
+      name="cm-newsletter-subscribe"
+      for="*"
+      class=".subscription.NewsletterSubscribeView"
+      permission="zope2.View"
+      layer="..interfaces.ICollectiveCampaignmonitorLayer"
+      />
 
 
 </configure>

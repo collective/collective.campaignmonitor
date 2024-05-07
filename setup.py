@@ -1,15 +1,14 @@
-# -*- coding: utf-8 -*-
 """Installer for the collective.campaignmonitor package."""
 
 from setuptools import find_packages
 from setuptools import setup
 
 
-long_description = '\n\n'.join(
+long_description = "\n\n".join(
     [
-        open('README.rst').read(),
-        open('CONTRIBUTORS.rst').read(),
-        open('CHANGES.rst').read(),
+        open("README.rst").read(),
+        open("CONTRIBUTORS.rst").read(),
+        open("CHANGES.rst").read(),
     ]
 )
 
@@ -27,8 +26,6 @@ setup(
         "Framework :: Plone :: 5.1",
         "Framework :: Plone :: 5.2",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 2.7",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
