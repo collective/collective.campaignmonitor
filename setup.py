@@ -25,6 +25,7 @@ setup(
         "Framework :: Plone :: Addon",
         "Framework :: Plone :: 6.1",
         "Programming Language :: Python",
+        "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
         "Programming Language :: Python :: 3.13",
@@ -48,7 +49,7 @@ setup(
     package_dir={"": "src"},
     include_package_data=True,
     zip_safe=False,
-    python_requires=">=3.11",
+    python_requires=">=3.10",
     install_requires=[
         "setuptools",
         # -*- Extra requirements: -*-
