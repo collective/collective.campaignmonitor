@@ -152,7 +152,7 @@ class CampaignMonitorConnection:
         self.initialize()
         cm_list = List({"api_key": self.api_key}, list_id=list_id)
         try:
-            webhook = cm_list.create_webhook(events, url, payload_format)
+            cm_list.create_webhook(events, url, payload_format)
             return True
         except BadRequest as e:
             log.info(str(e))
@@ -162,7 +162,7 @@ class CampaignMonitorConnection:
         self.initialize()
         cm_list = List({"api_key": self.api_key}, list_id=list_id)
         try:
-            webhook = cm_list.delete_webhook(webhook_id)
+            cm_list.delete_webhook(webhook_id)
             return True
         except BadRequest as e:
             log.info(str(e))

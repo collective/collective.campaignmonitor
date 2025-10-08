@@ -10,7 +10,7 @@
 
   <!--
     Be careful if you use general includeDependencies, it can have sideffects!
-    Better import explicite packages or configurations ;)
+    Better import explicit packages or configurations ;)
   -->
   <!--<includeDependencies package="." />-->
 

@@ -45,7 +45,7 @@ class ICampaignMonitorSettings(Interface):
 
 class ICampaignMonitorConnection(Interface):
     def initialize():
-        """Load connection data from registy and prepare for serving results"""
+        """Load connection data from registry and prepare for serving results"""
 
     def account():
         """Return account information for campaign monitor"""
