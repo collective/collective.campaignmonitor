@@ -10,10 +10,7 @@ from plone.app.testing import TEST_USER_ID
 import unittest
 
 
-try:
-    from Products.CMFPlone.utils import get_installer
-except ImportError:
-    get_installer = None
+from plone.base.utils import get_installer
 
 
 class TestSetup(unittest.TestCase):
@@ -24,14 +21,13 @@ class TestSetup(unittest.TestCase):
     def setUp(self):
         """Custom shared utility setup for tests."""
         self.portal = self.layer["portal"]
-        if get_installer:
-            self.installer = get_installer(self.portal, self.layer["request"])
-        else:
-            self.installer = api.portal.get_tool("portal_quickinstaller")
+        self.installer = get_installer(self.portal, self.layer["request"])
 
     def test_product_installed(self):
         """Test if collective.campaignmonitor is installed."""
-        self.assertTrue(self.installer.isProductInstalled("collective.campaignmonitor"))
+        self.assertTrue(
+            self.installer.is_product_installed("collective.campaignmonitor")
+        )
 
     def test_browserlayer(self):
         """Test that ICollectiveCampaignmonitorLayer is registered."""
@@ -49,19 +45,16 @@ class TestUninstall(unittest.TestCase):
 
     def setUp(self):
         self.portal = self.layer["portal"]
-        if get_installer:
-            self.installer = get_installer(self.portal, self.layer["request"])
-        else:
-            self.installer = api.portal.get_tool("portal_quickinstaller")
+        self.installer = get_installer(self.portal, self.layer["request"])
         roles_before = api.user.get_roles(TEST_USER_ID)
         setRoles(self.portal, TEST_USER_ID, ["Manager"])
-        self.installer.uninstallProducts(["collective.campaignmonitor"])
+        self.installer.uninstall_product("collective.campaignmonitor")
         setRoles(self.portal, TEST_USER_ID, roles_before)
 
     def test_product_uninstalled(self):
         """Test if collective.campaignmonitor is cleanly uninstalled."""
         self.assertFalse(
-            self.installer.isProductInstalled("collective.campaignmonitor")
+            self.installer.is_product_installed("collective.campaignmonitor")
         )
 
     def test_browserlayer_removed(self):

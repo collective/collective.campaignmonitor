@@ -8,8 +8,11 @@ class HiddenProfiles:
         """Hide uninstall profile from site-creation and quickinstaller."""
         return [
             "collective.campaignmonitor:uninstall",
-            "collective.campaignmonitor.upgrades:1001",
         ]
+
+    def getNonInstallableProducts(self):
+        """Hide the upgrades package from site-creation and quickinstaller."""
+        return ["collective.campaignmonitor.upgrades"]
 
 
 def post_install(context):
