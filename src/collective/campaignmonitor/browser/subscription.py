@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from collective.campaignmonitor import _  # noqa
 from collective.campaignmonitor.interfaces import ICampaignMonitorConnection
 from collective.campaignmonitor.interfaces import ICampaignMonitorSettings
@@ -18,14 +17,14 @@ class NewsletterSubscribeForm(extensible.ExtensibleForm, form.Form):
     fields = field.Fields(INewsletterSubscribe)
     ignoreContext = True
     id = "cm-subscribe-form"
-    label = _(u"Subscribe Form")
+    label = _("Subscribe Form")
 
     def updateActions(self):
-        super(NewsletterSubscribeForm, self).updateActions()
+        super().updateActions()
         self.actions["subscribe"].addClass("context")
 
     def updateWidgets(self):
-        super(NewsletterSubscribeForm, self).updateWidgets()
+        super().updateWidgets()
 
         registry = getUtility(IRegistry)
         self.settings = registry.forInterface(ICampaignMonitorSettings)
@@ -40,7 +39,8 @@ class NewsletterSubscribeForm(extensible.ExtensibleForm, form.Form):
             self.widgets["list_id"].value = list_id
 
     @button.buttonAndHandler(
-        _(u"subscribe_to_newsletter_button", default=u"Subscribe"), name="subscribe",
+        _("subscribe_to_newsletter_button", default="Subscribe"),
+        name="subscribe",
     )
     def handleApply(self, action):
         data, errors = self.extractData()
@@ -58,13 +58,13 @@ class NewsletterSubscribeForm(extensible.ExtensibleForm, form.Form):
             details = self.connection.list_details(list_id)
             if details.get("ConfirmedOptIn", None):
                 message = _(
-                    u"Your subscription was processed correctly. Check your e-mail for a confirmation message."
+                    "Your subscription was processed correctly. Check your e-mail for a confirmation message."
                 )
             else:
-                message = _(u"You have been subscribed to the newsletter")
+                message = _("You have been subscribed to the newsletter")
             api.portal.show_message(message, request=self.request, type="info")
         else:
-            message = _(u"Your subscription could not be processed. Please try again.")
+            message = _("Your subscription could not be processed. Please try again.")
             api.portal.show_message(message, request=self.request, type="error")
 
         self.request.response.redirect(self.context.absolute_url())
