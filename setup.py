@@ -30,6 +30,7 @@ setup(
         "Programming Language :: Python :: 3.13",
         "Operating System :: OS Independent",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
+        "Development Status :: 5 - Production/Stable",
     ],
     keywords="Python Plone",
     author="Mikel Larreategi",
