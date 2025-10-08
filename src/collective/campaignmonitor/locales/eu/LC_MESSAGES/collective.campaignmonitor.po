@@ -29,7 +29,7 @@ msgid "CampaignMonitor Settings"
 msgstr "Campaign Monitorren konfigurazioa"
 
 #: ../browser/controlpanel.py:22
-msgid "CampaingMonitor Settings"
+msgid "CampaignMonitor Settings"
 msgstr "Campaign Monitorren konfigurazioa"
 
 #: ../interfaces.py:29

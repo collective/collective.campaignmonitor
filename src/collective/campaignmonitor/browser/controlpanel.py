@@ -18,7 +18,7 @@ except ImportError:
 
 class CampaignMonitorControlPanelForm(controlpanel.RegistryEditForm):
     schema = ICampaignMonitorSettings
-    label = _("CampaingMonitor Settings")
+    label = _("CampaignMonitor Settings")
     description = ""
 
     def update(self):

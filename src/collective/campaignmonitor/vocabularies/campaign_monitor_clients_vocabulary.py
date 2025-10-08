@@ -9,7 +9,7 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 @implementer(IVocabularyFactory)
 class CampaignMonitorClientsVocabulary:
-    """A vocabulary that returns available clients on the registerd
+    """A vocabulary that returns available clients on the registered
     Campaign Monitor account
     """
 

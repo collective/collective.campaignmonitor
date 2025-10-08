@@ -30,7 +30,7 @@ msgid "CampaignMonitor Settings"
 msgstr ""
 
 #: ../browser/controlpanel.py:22
-msgid "CampaingMonitor Settings"
+msgid "CampaignMonitor Settings"
 msgstr ""
 
 #: ../interfaces.py:29

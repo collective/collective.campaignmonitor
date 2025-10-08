@@ -19,7 +19,7 @@ Heavily based on `collective.mailchimp`_ by `Timo Stollenwerk`_
 
 Like `collective.mailchimp`_ this product provides a portlet and a view (@@cm-newsletter-subscribe) to let users subscribe to a newsletter.
 
-The product provides a configuration control panel to let sites admins enter the Campaing Monitor API Key and select a customer, this way the available list of this customer will be selectable both in the subscribe form and in the portlet.
+The product provides a configuration control panel to let sites admins enter the Campaign Monitor API Key and select a customer, this way the available list of this customer will be selectable both in the subscribe form and in the portlet.
 
 This product has been tested on Plone 5.1 and above.
 
