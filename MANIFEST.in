@@ -6,3 +6,4 @@ include *.GPL
 include *.txt
 include *.yml
 include tox.ini
+include bobtemplate.cfg
