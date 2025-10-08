@@ -1,3 +1,10 @@
+2.0.0 (2025-10-08)
+
+
+### Features
+
+- Drop python2 and Plone 5.x support. Mark as Plone 6 only @erral 
+
 Changelog
 =========
 
