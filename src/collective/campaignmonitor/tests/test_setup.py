@@ -6,11 +6,9 @@ from collective.campaignmonitor.testing import (  # noqa: E501
 from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
+from plone.base.utils import get_installer
 
 import unittest
-
-
-from plone.base.utils import get_installer
 
 
 class TestSetup(unittest.TestCase):
