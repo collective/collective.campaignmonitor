@@ -54,6 +54,18 @@ setup(
         # -*- Extra requirements: -*-
         "plone.api>=1.8.4",
         "createsend>=8.0.0",
+        "Products.CMFPlone",
+        "Products.Five",
+        "z3c.form",
+        "zope.component",
+        "zope.schema",
+        "zope.interface",
+        "plone.app.registry",
+        "plone.app.upgrade",
+        "zope.publisher",
+        "Products.GenericSetup",
+        "zope.i18nmessageid",
+        "plone.protect",
     ],
     extras_require={
         "test": [
@@ -64,6 +76,10 @@ setup(
             "plone.testing>=5.0.0",
             "plone.app.contenttypes",
             "plone.app.robotframework[debug]",
+            "plone.base",
+            "plone.browserlayer",
+            "zope.schema",
+            "zope.component",
         ]
     },
     entry_points="""
