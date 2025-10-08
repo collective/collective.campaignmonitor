@@ -47,6 +47,7 @@ setup(
     package_dir={"": "src"},
     include_package_data=True,
     zip_safe=False,
+    requires_python=">=3.11",
     install_requires=[
         "setuptools",
         # -*- Extra requirements: -*-
